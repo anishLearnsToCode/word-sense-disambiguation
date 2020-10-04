@@ -1,7 +1,11 @@
 # Word Sense Disambiguation
 
+__Anish Sachdeva (DTU/2K16/MC/13)__
+
+__Natural Language Processing (Dr. Seba Susan)__
+
 [📘 Path Length Similarity]() |
-[📘 Resnik Similarity]()|
+[📘 Resnik Similarity]() |
 [✒ Report]()
 
 ## Overview
