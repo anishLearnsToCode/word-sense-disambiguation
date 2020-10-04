@@ -17,8 +17,32 @@ __Natural Language Processing (Dr. Seba Susan)__
 - [Bibliography]()
 
 ## Introduction
+### Notebooks
+1. [Naive Disambiguation](notebooks/naive-disambiguation.ipynb)
 
 ## Naïve Disambiguation
+To see the disambiguation of any given word using the naive method, pull this repository on your 
+machine and install all dependencies.
+
+```powershell
+git clone https://github.com/anishLearnsToCode/word-sense-disambiguation.git
+pip install -r requirements.txt
+```
+
+navigate to the `naive_method.py` file and run it and enter a word of your choice:
+
+```powershell
+cd src
+python naive_method.py
+>> Enter word for disambiguation:    bank
+>> Definition: a large natural stream of water (larger than a creek)
+>> Examples:
+>> ['they pulled the canoe up on the bank',
+>> 'he sat on the bank of the river and watched the currents']
+```
+
+See a running example with explanation in 
+[this notebook](notebooks/naive-disambiguation.ipynb)
 
 ## Simple LESK Similarity Disambiguation
 
