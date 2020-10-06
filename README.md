@@ -6,6 +6,8 @@ __Natural Language Processing (Dr. Seba Susan)__
 
 [📘 Path Length Similarity]() |
 [📘 Resnik Similarity]() |
+[📗 Naïve Disambiguation](notebooks/naive-disambiguation.ipynb) |
+[📗 Simple LESK Algorithm](notebooks/simple-lesk-algorithm.ipynb) |
 [✒ Report]()
 
 ## Overview
