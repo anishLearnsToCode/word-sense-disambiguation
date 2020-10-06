@@ -8,7 +8,7 @@ __Natural Language Processing (Dr. Seba Susan)__
 [📘 Resnik Similarity](notebooks/resnik-similarity.ipynb) |
 [📗 Naïve Disambiguation](notebooks/naive-disambiguation.ipynb) |
 [📗 Simple LESK Algorithm](notebooks/simple-lesk-algorithm.ipynb) |
-[✒ Report](assets)
+[✒ Report](assets/nlp-wsd.pdf)
 
 ![booster](assets/booster.png)
 
