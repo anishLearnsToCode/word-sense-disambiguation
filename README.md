@@ -11,16 +11,17 @@ __Natural Language Processing (Dr. Seba Susan)__
 [✒ Report]()
 
 ## Overview
-- [Introduction]()
-- [Naïve Disambiguation]()
-- [Simple LESK Algorithm Disambiguation]()
-- [Path Length Similarity Disambiguation]()
-- [Resnik Similarity Disambiguation]()
-- [Bibliography]()
+- [Introduction](#introduction)
+- [Naïve Disambiguation](#nave-disambiguation)
+- [Simple LESK Algorithm Disambiguation](#simple-lesk-similarity-disambiguation)
+- [Path Length Similarity Disambiguation](#path-length-similarity-disambiguation)
+- [Resnik Similarity Disambiguation](#resnik-similarity-disambiguation)
+- [Bibliography](#bibliography)
 
 ## Introduction
 ### Notebooks
 1. [Naive Disambiguation](notebooks/naive-disambiguation.ipynb)
+1. [Simple LESK Algorithm Disambiguation](notebooks/simple-lesk-algorithm.ipynb) 
 
 ## Naïve Disambiguation
 To see the disambiguation of any given word using the naive method, pull this repository on your 
