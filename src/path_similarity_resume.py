@@ -76,16 +76,18 @@ print('\nThe similarity coefficients are:\n')
 similarity = pd.DataFrame(similarity_mat, columns=documents[5])
 print(similarity.to_string())
 
+# saving the similarity coefficient matrix in text file
+results = open('../assets/path_similarity_matrix.txt', 'w')
+results.write(similarity.to_string())
+results.close()
+
 # We now select the highest and lowest similarity document for each word in the 6th document
 min = similarity_mat.argmin(axis=0)
 max = similarity_mat.argmax(axis=0)
 
-print(min)
-print(max)
-
 # document with least/maximum similarity
-document_min_similarity = stats.mode(min).mode
-document_max_similarity = stats.mode(max).mode
+document_min_similarity = stats.mode(min).mode[0]
+document_max_similarity = stats.mode(max).mode[0]
 
-print(document_min_similarity)
-print(document_max_similarity)
+print('\nDocument with Minimum Similarity to 6th document:', documents[document_min_similarity])
+print('Document with Maximum Similarity to 6th document:', documents[document_max_similarity])

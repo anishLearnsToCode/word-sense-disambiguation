@@ -4,7 +4,7 @@ __Anish Sachdeva (DTU/2K16/MC/13)__
 
 __Natural Language Processing (Dr. Seba Susan)__
 
-[📘 Path Length Similarity]() |
+[📘 Path Length Similarity](notebooks/path-similarity-metric.ipynb) |
 [📘 Resnik Similarity]() |
 [📗 Naïve Disambiguation](notebooks/naive-disambiguation.ipynb) |
 [📗 Simple LESK Algorithm](notebooks/simple-lesk-algorithm.ipynb) |
@@ -54,14 +54,14 @@ to all possible senses of the given token.
 
 To run locally, clone the repository and install dependencies
 
-```powershell
+```bash
 git clone https://github.com/anishLearnsToCode/word-sense-disambiguation.git
 pip install -r requirements.txt
 ```
 
 Navigate to `simple_lesk_algorithm.py` file and test with sample gloss and word token
 
-```powershell
+```bash
 cd src
 python simple_lesk_algorithm.py
 >> Enter the Gloss (document):	i like a hot cup of java in the morning 
@@ -71,7 +71,35 @@ python simple_lesk_algorithm.py
 ```
 
 ## Path length Similarity Disambiguation
-The Path Length Similarity  
+The Path Length Similarity computes the minimum hop path between any 2 words in the wordnet 
+corpus using the Hypernym Paths available and then computes the similarity score as __-log (pathlen(w1, w2))__.
+
+To compute the Path Score and closest synsets between any 2 english words run the `path_length_similarity.py`
+file as 
+
+```bash
+git clone clone https://github.com/anishLearnsToCode/word-sense-disambiguation.git
+cd word-sense-disambiguation
+pip install -r requirements.txt
+cd src
+python path_length_similarity.py
+>> Enter first word:	dog
+>> Enter second word:	wolf
+>> Dog Definition: a member of the genus Canis (probably descended from the common wolf) that has been domesticated by man since prehistoric times; occurs in many breeds
+>> Wolf Definition: any of various predatory carnivorous canine mammals of North America and Eurasia that usually hunt in packs
+>> similarity: -0.6931471805599453
+```
+
+Then to compute the similarity between 6th document with other documents (keywords) in the resume run the
+`path_similarity_resume.py` file as:
+
+```bash
+cd src
+python path_similarity_resume.py
+```
+
+See [results here](assets/path_similarity_matrix.txt). See the explanation and results in 
+[Jupyter Notebook](notebooks/path-similarity-metric.ipynb).
 
 ## Resnik Similarity Disambiguation
 

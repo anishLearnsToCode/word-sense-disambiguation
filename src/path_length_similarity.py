@@ -2,8 +2,8 @@
 # The Path length similarity computes the similarity between 2 synsets based on the hop length between the nodes
 # in the Hypernym Path in the wordnet corpus
 
-import numpy as np
 # importing required packages
+import numpy as np
 from nltk.corpus import wordnet
 # nltk.download('wordnet')
 
