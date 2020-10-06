@@ -5,7 +5,7 @@ __Anish Sachdeva (DTU/2K16/MC/13)__
 __Natural Language Processing (Dr. Seba Susan)__
 
 [📘 Path Length Similarity](notebooks/path-similarity-metric.ipynb) |
-[📘 Resnik Similarity](notebooks) |
+[📘 Resnik Similarity](notebooks/resnik-similarity.ipynb) |
 [📗 Naïve Disambiguation](notebooks/naive-disambiguation.ipynb) |
 [📗 Simple LESK Algorithm](notebooks/simple-lesk-algorithm.ipynb) |
 [✒ Report](assets)
@@ -19,11 +19,14 @@ __Natural Language Processing (Dr. Seba Susan)__
 - [Bibliography](#bibliography)
 
 ## Introduction
+We explore 4 different metrics to compare similarity and disambiguate words. For the 4 different 
+methods refer to the Notebooks Below:
+
 ### Notebooks
 1. [Naive Disambiguation](notebooks/naive-disambiguation.ipynb)
 1. [Simple LESK Algorithm Disambiguation](notebooks/simple-lesk-algorithm.ipynb) 
 1. [Path Length Similarity Metric](notebooks/path-similarity-metric.ipynb)
-1. [Resnik Similarity Metric](notebooks)
+1. [Resnik Similarity Metric](notebooks/resnik-similarity.ipynb)
 
 ## Naïve Disambiguation
 To see the disambiguation of any given word using the naive method, pull this repository on your 
@@ -80,7 +83,7 @@ To compute the Path Score and closest synsets between any 2 english words run th
 file as 
 
 ```bash
-git clone clone https://github.com/anishLearnsToCode/word-sense-disambiguation.git
+git clone https://github.com/anishLearnsToCode/word-sense-disambiguation.git
 cd word-sense-disambiguation
 pip install -r requirements.txt
 cd src
@@ -104,6 +107,27 @@ See [results here](assets/path_similarity_matrix.txt). See the explanation and r
 [Jupyter Notebook](notebooks/path-similarity-metric.ipynb).
 
 ## Resnik Similarity Disambiguation
+To compute the similarity between 2 words and find closest possible synsets 
+run `resnik_similarity.py` as:
+
+```bash
+git clone https://github.com/anishLearnsToCode/word-sense-disambiguation.git
+cd word-sense-disambiguation
+pip install -r requirements.txt
+cd src
+python resnik_similarity.py
+>> Enter the first word:	java
+>> Enter the second word:	language
+>> Java Definition: a platform-independent object-oriented programming language
+>> Language Definition: a systematic means of communicating by the use of sounds or conventional symbols
+>> similarity: 5.792086967391197
+```
+
+To run this metric on the Resume and see the similarity between 6th document and other documents
+run the `resnik_similarity_resume.py` file.
+
+See resnik similarity coefficient [matrix here](assets/resnik_similarity_matrix.txt) and
+see explanation and results in [this Notebook](notebooks/resnik-similarity.ipynb). 
 
 ## Bibliography
 1. [Speech & Language Processing ~Jurafsky](https://web.stanford.edu/~jurafsky/slp3/)
