@@ -5,10 +5,10 @@ __Anish Sachdeva (DTU/2K16/MC/13)__
 __Natural Language Processing (Dr. Seba Susan)__
 
 [📘 Path Length Similarity](notebooks/path-similarity-metric.ipynb) |
-[📘 Resnik Similarity]() |
+[📘 Resnik Similarity](notebooks) |
 [📗 Naïve Disambiguation](notebooks/naive-disambiguation.ipynb) |
 [📗 Simple LESK Algorithm](notebooks/simple-lesk-algorithm.ipynb) |
-[✒ Report]()
+[✒ Report](assets)
 
 ## Overview
 - [Introduction](#introduction)
@@ -22,6 +22,8 @@ __Natural Language Processing (Dr. Seba Susan)__
 ### Notebooks
 1. [Naive Disambiguation](notebooks/naive-disambiguation.ipynb)
 1. [Simple LESK Algorithm Disambiguation](notebooks/simple-lesk-algorithm.ipynb) 
+1. [Path Length Similarity Metric](notebooks/path-similarity-metric.ipynb)
+1. [Resnik Similarity Metric](notebooks)
 
 ## Naïve Disambiguation
 To see the disambiguation of any given word using the naive method, pull this repository on your 
