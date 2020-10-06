@@ -45,6 +45,27 @@ See a running example with explanation in
 [this notebook](notebooks/naive-disambiguation.ipynb)
 
 ## Simple LESK Similarity Disambiguation
+In the Simple LESK Algorithm we use the words present in the gloss surrounding the main token to 
+disambiguate it's meaning and we assign Inverse Document Frequency (IDF) values and assign weights
+to all possible senses of the given token.
+
+To run locally, clone the repository and install dependencies
+
+```powershell
+git clone https://github.com/anishLearnsToCode/word-sense-disambiguation.git
+pip install -r requirements.txt
+```
+
+Navigate to `simple_lesk_algorithm.py` file and test with sample gloss and word token
+
+```powershell
+cd src
+python simple_lesk_algorithm.py
+>> Enter the Gloss (document):	i like a hot cup of java in the morning 
+>> Enter word for disambiguation:	java
+>> The disambiguated meaning is: a beverage consisting of an infusion of ground coffee beans
+>> The weight vector is: [0, 0.28768207245178085, 0]
+```
 
 ## Path length Similarity Disambiguation
 
