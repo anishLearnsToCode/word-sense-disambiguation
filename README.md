@@ -71,6 +71,7 @@ python simple_lesk_algorithm.py
 ```
 
 ## Path length Similarity Disambiguation
+The Path Length Similarity  
 
 ## Resnik Similarity Disambiguation
 

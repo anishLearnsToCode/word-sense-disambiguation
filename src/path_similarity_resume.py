@@ -1,11 +1,18 @@
-# Method 3 (Path Length Similarity)
-# The Path length similarity computes the similarity between 2 synsets based on the hop length between the nodes
-# in the Hypernym Path in the wordnet corpus
+# We will compare the 6th document from our resume with the first 5 and see which document it matches most closely to
+# in the resume
 
-import numpy as np
 # importing required packages
+import nltk
+import pickle
+import pprint
 from nltk.corpus import wordnet
 # nltk.download('wordnet')
+import pandas as pd
+import numpy as np
+from scipy import stats
+
+
+infinity = float('inf')
 
 
 # define the path length similarity metric
@@ -36,8 +43,11 @@ def closest_synsets(word_1: str, word_2: str):
     word_1 = wordnet.synsets(word_1.lower())
     word_2 = wordnet.synsets(word_2.lower())
     max_similarity = -float('inf')
-    synset_1_optimal = word_1[0]
-    synset_2_optimal = word_2[0]
+    try:
+        synset_1_optimal = word_1[0]
+        synset_2_optimal = word_2[0]
+    except:
+        return None, None, -infinity
 
     for synset_1 in word_1:
         for synset_2 in word_2:
@@ -50,10 +60,32 @@ def closest_synsets(word_1: str, word_2: str):
     return synset_1_optimal, synset_2_optimal, max_similarity
 
 
-word_1 = input('Enter first word:\t')
-word_2 = input('Enter second word:\t')
-word_1_synset, word_2_synset, similarity = closest_synsets(word_1, word_2)
+# loading in the 6 documents from the resume
+documents = pickle.load(open('../assets/documents.p', 'rb'))
+print('The documents are:')
+pprint.pprint(documents)
 
-print(word_1.capitalize() + ' Definition:', word_1_synset.definition())
-print(word_2.capitalize() + ' Definition:', word_2_synset.definition())
-print('similarity:', similarity)
+# We will now find the similarity between the 6th document and every other document
+similarity_mat = np.zeros((len(documents) - 1, len(documents[0])))
+
+for column, keyword in enumerate(documents[len(documents) - 1]):
+    for row in range(len(documents) - 1):
+        similarity_mat[row][column] = closest_synsets(keyword, documents[row][column])[2]
+
+print('\nThe similarity coefficients are:\n')
+similarity = pd.DataFrame(similarity_mat, columns=documents[5])
+print(similarity.to_string())
+
+# We now select the highest and lowest similarity document for each word in the 6th document
+min = similarity_mat.argmin(axis=0)
+max = similarity_mat.argmax(axis=0)
+
+print(min)
+print(max)
+
+# document with least/maximum similarity
+document_min_similarity = stats.mode(min).mode
+document_max_similarity = stats.mode(max).mode
+
+print(document_min_similarity)
+print(document_max_similarity)
