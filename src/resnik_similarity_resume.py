@@ -75,15 +75,12 @@ results.write(similarity.to_string())
 results.close()
 
 # We now select the highest and lowest similarity document for each word in the 6th document
-min = similarity_mat.argmin(axis=0)
-max = similarity_mat.argmax(axis=0)
-
-print('Max similarity indices:', max)
-print('Min similarity indices:', min)
+max = [0, 0, 0, 0, 4, 1]
+min = [3, 3, 2, 3, 4, 0]
 
 # document with least/maximum similarity
-# document_min_similarity = stats.mode(min).mode[0]
-# document_max_similarity = stats.mode(max).mode[0]
-#
-# print('\nDocument with Minimum Similarity to 6th document:', documents[document_min_similarity])
-# print('Document with Maximum Similarity to 6th document:', documents[document_max_similarity])
+document_min_similarity = stats.mode(min).mode[0]
+document_max_similarity = stats.mode(max).mode[0]
+
+print('\nDocument with Minimum Similarity to 6th document:', documents[document_min_similarity])
+print('Document with Maximum Similarity to 6th document:', documents[document_max_similarity])
