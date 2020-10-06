@@ -10,6 +10,8 @@ __Natural Language Processing (Dr. Seba Susan)__
 [📗 Simple LESK Algorithm](notebooks/simple-lesk-algorithm.ipynb) |
 [✒ Report](assets)
 
+![booster](assets/booster.png)
+
 ## Overview
 - [Introduction](#introduction)
 - [Naïve Disambiguation](#nave-disambiguation)
