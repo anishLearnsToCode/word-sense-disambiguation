@@ -6,11 +6,14 @@ import nltk
 import pickle
 import pprint
 from nltk.corpus import wordnet
-# nltk.download('wordnet')
 import pandas as pd
 import numpy as np
 from scipy import stats
 
+try:
+    wordnet.ensure_loaded()
+except LookupError:
+    nltk.download('wordnet')
 
 infinity = float('inf')
 

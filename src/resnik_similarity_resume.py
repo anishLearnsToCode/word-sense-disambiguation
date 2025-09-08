@@ -9,14 +9,19 @@
 # Importing packages
 import nltk
 from nltk.corpus import wordnet, wordnet_ic
-# nltk.download('wordnet')
-# nltk.download('wordnet_ic')
 from nltk.stem import WordNetLemmatizer
 import numpy as np
 import pickle
 import pprint
 import pandas as pd
 from scipy import stats
+
+try:
+    wordnet.ensure_loaded()
+    wordnet_ic.ensure_loaded()
+except LookupError:
+    nltk.download('wordnet')
+    nltk.download('wordnet_ic')
 
 # Defining Infinity
 infinity = float('inf')

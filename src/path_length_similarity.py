@@ -4,9 +4,13 @@
 
 # importing required packages
 import numpy as np
+import nltk
 from nltk.corpus import wordnet
-# nltk.download('wordnet')
 
+try:
+    wordnet.ensure_loaded()
+except LookupError:
+    nltk.download('wordnet')
 
 # define the path length similarity metric
 def path_similarity(hypernym_path1: list, hypernym_path2: list) -> float:

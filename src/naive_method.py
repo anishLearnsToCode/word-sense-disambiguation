@@ -7,8 +7,11 @@ import pickle
 import random
 import nltk
 from nltk.corpus import wordnet
-# nltk.download('wordnet')
 
+try:
+    wordnet.ensure_loaded()
+except LookupError:
+    nltk.download('wordnet')
 
 def naive_disambiguation(word: str):
     synsets = wordnet.synsets(word)
@@ -32,7 +35,7 @@ else:
 # disambiguate one keyword from each document
 
 print('\n\nWe now disambiguate a few keywords from the resume')
-documents = pickle.load(open('../assets/documents.p', 'rb'))
+documents = pickle.load(open('assets/documents.p', 'rb'))
 for document in documents:
     document = list(document)
     word = document[random.randint(0, len(document) - 1)]

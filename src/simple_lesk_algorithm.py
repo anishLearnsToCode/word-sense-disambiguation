@@ -6,9 +6,15 @@
 import pprint
 
 import numpy as np
+import nltk
 from nltk.corpus import wordnet
 # nltk.download('wordnet')
 
+# Ensure wordnet is downloaded
+try:
+    wordnet.ensure_loaded()
+except LookupError:
+    nltk.download('wordnet')
 
 from src import tokenize
 
